@@ -119,10 +119,10 @@ me.say_hi()
 
 <div align="center">
 
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username=mrvaibhavbhardwaj&theme=tokyonight&hide_border=false&include_all_commits=true&count_private=true&show_icons=true&rank_icon=github" />
-<img width="49%" src="https://nirzak-streak-stats.vercel.app/?user=mrvaibhavbhardwaj&theme=tokyonight&hide_border=false" />
+<img width="49%" src="https://github-readme-stats.vercel.app/api?username=mrvaibhavbhardwaj&theme=tokyonight&hide_border=false&include_all_commits=true&count_private=true&show_icons=true" />
+<img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=mrvaibhavbhardwaj&theme=tokyonight&hide_border=false" />
 
-<img width="50%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mrvaibhavbhardwaj&theme=tokyonight&hide_border=false&include_all_commits=true&count_private=true&layout=donut" />
+<img width="50%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mrvaibhavbhardwaj&theme=tokyonight&hide_border=false&include_all_commits=true&count_private=true&layout=compact" />
 
 </div>
 
@@ -208,9 +208,45 @@ me.say_hi()
 
 ## 🐍 Contribution Snake
 
+> **One-time setup (2 min):** In your profile repo, create `.github/workflows/snake.yml` with the content below. GitHub will auto-generate the snake SVG every 12 hours.
+
+<details>
+<summary>📋 Click to copy the GitHub Action workflow</summary>
+
+```yaml
+name: Generate Snake
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: mrvaibhavbhardwaj
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+      - uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+</details>
+
 <div align="center">
 
-![Snake animation](https://github.com/mrvaibhavbhardwaj/mrvaibhavbhardwaj/blob/output/github-contribution-grid-snake-dark.svg)
+![Snake animation](https://raw.githubusercontent.com/mrvaibhavbhardwaj/mrvaibhavbhardwaj/output/github-contribution-grid-snake-dark.svg)
 
 </div>
 
